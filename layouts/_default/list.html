@@ -1,16 +1,23 @@
 {{ partial "header.html" . }}
 
+  <div class="ball">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5w6acuy1p50&amp;m=6&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"></script>
+  </div>
+
 <div class="container">
 <main class="list">
-{{ $paginator := .Paginate (where .Data.Pages "Section" "!=" "") }}
-{{ range $paginator.Pages }}
+
+
+{{ range .Paginator.Pages.ByWeight }}
+
+
 <section class="article-list">
   <div class = "category_date">
 
       <div class="categories">
-      {{ with .Params.categories }}
+      {{ with .Params.bangumis }}
       {{ range first 1 . }}
-        <a href="{{ relURL (print "/categories/" . | urlize) }}">{{ . }}</a>
+        <a href="{{ relURL (print "/bangumis/" . | urlize) }}">{{ . }}</a>
       {{ end }}
       {{ else }}
         <a>{{ default "Uncategorized" .Site.Params.text.uncategorized }}</a>
@@ -49,7 +56,7 @@
 </section>
 {{ end }}
 </main>
-<nav>{{ template "_internal/pagination.html" . }}</nav>
+<nav>{{ template "partials/pagination.html" . }}</nav>
 </div>
 
 {{ partial "footer.html" . }}

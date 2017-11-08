@@ -10,31 +10,27 @@ footnotereturnlinkcontents = "↩"
 hasCJKLanguage = true
 enableEmoji = true
 paginate = 12
+enableGitInfo = true
 
 [permalinks]
     post = "/post/:year/:month/:day/:slug/"
 
 
 [[menu.main]]
-    name = "订阅"
+    name = "RSS订阅"
     url = "/index.xml"
-    weight = 2
-[[menu.main]]
-    name = "加入我们"
-    url = "/joinus/"
     weight = 6
+
 [[menu.main]]
-    name = "字幕组简介"
+    name = "成员简介"
     url = "/fansub/"
-    weight = 5
+    weight = 2
 [[menu.main]]
     name = "转载规则"
     url = "/rules/"
     weight = 3
-[[menu.main]]
-    name = "投稿方法"
-    url = "/contribute/"
-    weight = 7
+
+
 
 
 [[menu.top]]
@@ -42,21 +38,26 @@ paginate = 12
     url = "/"
     weight = 1
 [[menu.top]]
-    name = "分类"
-    url = "/categories/"
+    name = "分部"
+    url = "/subteams/"
     weight = 3
 [[menu.top]]
     name = "标签"
     url = "/tags/"
     weight = 4
 [[menu.top]]
-    name = "作品"
-    url = "/post/"
+    name = "番组"
+    url = "/bangumis/"
     weight = 5
 [[menu.top]]
-    name = "文章"
-    url = "/blog/"
+    name = "索引"
+    url = "/archives/"
     weight = 6
+[[menu.top]]
+    name = "留言"
+    url = "/crit/"
+
+
 
 
 
@@ -66,14 +67,21 @@ paginate = 12
     github_edit = "https://github.com/tcgriffith/owaraisite/blob/master/content/"
     footer = "Powered by [Hugo](https://gohugo.io/), [blogdown](https://github.com/rstudio/blogdown) & [netlify](https://www.netlify.com/) &copy; [OWARAICLUB](https://owarai.netlify.com/) 2017"
     comment = true
+    noedit = true
 
 [params.text]
     back = "&larr; 返回首页"
     edit = "&#9988;  编辑本页"
     truncated = "&hellip;"
-    tags = " "
+    tags = "标签： "
     about_author = "关于作者"
+    author_delimiter= "&#x1F575"
 
 [params.banner]
     src = "/img/logo.png"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  bangumi = "bangumis"
 

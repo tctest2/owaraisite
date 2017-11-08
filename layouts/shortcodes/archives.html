@@ -1,10 +1,17 @@
-{{ range (where .Site.RegularPages "Section" "!=" "").GroupByDate "2006" }}
+{{ range (where .Site.RegularPages "Section" "!=" "").GroupByParam "Bangumi" }}
 <h2 class="archive-title">{{ .Key }}</h2>
 <ul>
-  {{ range .Pages }}
+  {{ range .Pages.ByPublishDate.Reverse }}
   <li>
-    <span class="date">{{ .Date.Format "2006/01/02" }}</span>
+
+
+    <span class="date">{{ .PublishDate.Format "2006/01/02" }}</span>
+
     <a href="{{ .URL }}">{{ .Title }}</a>
+    {{ if lt (sub now.YearDay .Lastmod.YearDay) 1 }}
+        <span class="last-modified">更新于{{ sub now.YearDay .Lastmod.YearDay }} 天前</span>
+    {{ end }}
+
   </li>
   {{ end }}
 </ul>

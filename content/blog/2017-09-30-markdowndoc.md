@@ -2,12 +2,16 @@
 title: markdown简介
 author: 疾风
 date: '2017-09-30'
+publishdate: '2017-10-01'
+bangumi: 博客
+bangumis: 
+  - 博客
 slug: markdowndoc
-categories:
-  - blog
-tags:
-  - other
+categories: 
+  - 疾风
+  - 莱姆籽
 description: "本站所有文章均基于markdown格式，遂作次简易入门"
+draft: true
 ---
 
 ![](https://i.imgur.com/Ce0lBtF.png)
